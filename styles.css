@@ -1,14 +1,30 @@
 h1 { 
-  color : blue; 
-  text-align: center; 
+  color : #e91f62;
+  border-bottom: 2px solid #f8f9f8;
+  padding-bottom: 9px; 
 }
 
-.myDiv {
-  border: 5px outset red;
-  background-color: lightblue;
-  text-align: center;
+
+h1::after{ 
+  content: ""; 
+  display: block; 
+  border-bottom: 2px solid #e91f62;
+  width: 0; 
+  position: relative; 
+  bottom: -11px; 
+  transition: width .8s ease; 
+}
+
+.section:hover h1::after{ 
+  width: 58%;
+}
+
+#repoDiv{ 
+  text-indent: 10%; 
+  color: #f8f9f8; 
 }
 
 * { 
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  background-color : #1a1b1b; 
+  font-family :'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
