@@ -11,7 +11,9 @@ let quizComplete = false;
 function overattempts(){ 
   clearInterval(myfunc); 
   $(".q-wrapper").find("#q-number").remove(); 
-  $(window).on("unload").remove(); 
+  $(window).off("beforeunload"); 
+  $(window).off("unload"); 
+
 
   $("body").css({
     "height": "auto",
@@ -42,6 +44,8 @@ function overattempts(){
 }
 
 async function overtime(){ 
+  $(window).off("beforeunload"); 
+  $(window).off("unload");  
   clearInterval(myfunc);
   $("body").find(".response").each(function(e){
     this.remove();  
@@ -57,7 +61,8 @@ async function overtime(){
     }, 
     'body': JSON.stringify(answers)
   }).then(response => response.json())
-    .then(results => display(results)); 
+    .then(results => display(results));
+
 }
 
 function display(results){ 
@@ -170,7 +175,8 @@ async function results(){
   quizComplete = true; 
   clearInterval(myfunc);
   $("body").find(".timer").remove(); 
-  
+  $(window).off("beforeunload"); 
+  $(window).off("unload");  
   await fetch(url + '/result', { 
     'method': 'POST', 
     'mode': 'cors', 
@@ -286,6 +292,26 @@ async function prepare(event){
       overtime("username", username, 30); 
     
   }, 1000); 
+
+  $(window).on("beforeunload", function(){ 
+    return "Attempt will be flagged for refreshing, Are you sure?"  //not supported on modern browsers
+  })
+
+  $(window).on("unload", function(){ 
+    fetch(url + '/result/partial', { 
+      'method': 'POST', 
+      'mode': 'cors', 
+      'headers': { 
+        'Authorization': "Basic " + btoa(`${username}:${''}`),
+        'Content-Type': 'application/json', 
+        'Accept': 'application/json',
+        'X-Invalid': true
+      }, 
+      'body': JSON.stringify(answers), 
+      'keepalive': true
+    })
+    console.log("unload"); 
+  }) 
 
   await quiz(); 
 
