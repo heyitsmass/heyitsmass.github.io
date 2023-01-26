@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" data-auto-replace-svg="nest"></script>
+    <script src="https://kit.fontawesome.com/d66784af5c.js" crossorigin="anonymous"></script>
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inter'>
+    <link rel='stylesheet' href='styles.css'> 
+    <script src='quiz.js'></script>
+  </head>
+
+
+  <body>
+    <p id="title">Training Quiz</p>
+    <ul>
+      <li>This quiz consists of 10 multiple choice questions</li>
+      <li>You will have 15 minutes to complete the quiz</li>
+      <li>You will have 3 attempts</li>
+      <li>Refreshing the page will consume an attempt</li> 
+      <li>You must get at-least 80% (B or 8/10) to pass</li>
+      <li>Contact a supervisor if there are any issues</li>
+    </ul>
+    <div class="input-wrapper">
+      <input id="user-input" type="text" placeholder="Enter username..." onkeypress=getkey(this)>
+      <i class='fa-solid fa-magnifying-glass' onclick=getclick(this)></i>
+    </div>
+  </body>
+</html> 

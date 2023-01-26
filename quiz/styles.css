@@ -1,0 +1,237 @@
+html{ 
+  background-color: #353535;
+  height: 100%; 
+  width: 100%; 
+  overflow: hidden; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter';
+}
+
+body{ 
+  border: solid 1px white; 
+  color: white;
+  padding: 10px 10px 40px 10px; 
+  border-radius: 10px;
+  position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  box-shadow: 0px 0px 12px 2px black;
+}
+
+body p{ 
+  margin: 0; 
+  padding: 8px; 
+
+}
+
+body ul{ 
+  text-align: left; 
+  padding-left: 30px; 
+  padding-right: 20px;
+  padding-bottom: 10px; 
+}
+
+#company{
+  font-weight: bolder;
+  font-size: 4rem;
+}
+
+#title{ 
+  font-weight: bold; 
+  font-size: 2rem; 
+  padding-top: 30px; 
+  padding-bottom: 20px; 
+}
+
+/* input */ 
+body input[type=text]{ 
+  background:transparent;
+  font-size: 1.2rem;
+  border-right: none; 
+  border-radius: 5px 0 0 5px;
+}
+
+.input-wrapper{
+  border: solid 1px white; 
+  border-radius: 10px; 
+  width: 64%; 
+}
+
+.input-wrapper i{ 
+  margin: 0; 
+  padding: 10px;
+  border-left: solid 1px white; 
+}
+
+.input-wrapper i:hover{ 
+  cursor:pointer; 
+}
+
+input[type=text]{
+  border: none; 
+  width: 78%; 
+  padding: 8px; 
+}
+
+input[type=text]:not(:placeholder-shown){ 
+  color: white; 
+}
+
+input[type=text]:focus{
+  outline: none; 
+  color: white; 
+}
+
+/* question window */ 
+.q-wrapper{ 
+  border-bottom: solid 1px white; 
+  display: flex; 
+  font-size: 1.2rem;
+  padding-bottom: 8px; 
+  height: 70px; 
+  align-items: center; 
+  width: 100%; 
+}
+
+.q-wrapper span{ 
+  padding: 10px; 
+}
+
+#q-number{ 
+  display: flex; 
+  align-items: center; 
+}
+
+/* timer */ 
+.timer{ 
+  border: solid 1px white; 
+  padding: 10px; 
+  border-radius: 10px;
+  position: absolute; 
+  bottom: -50px; 
+  right: 0; 
+  width: max-content; 
+
+}
+
+.response{ 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  text-transform: capitalize;
+  width: 100%; 
+}
+
+.response:hover{ 
+  cursor:pointer; 
+}
+
+.results{ 
+  width: max-content; 
+  margin: 30px; 
+  display: flex; 
+  flex-direction: column;
+}
+
+.results p{ 
+  padding: 10px;
+  margin: 0; 
+  text-transform: capitalize;
+}
+
+.results span{ 
+  padding: 10px; 
+  margin: 0; 
+  text-transform: capitalize;
+}
+
+.results #key{ 
+  display: inline-flex; 
+  padding-right: 0; 
+  width: 100px; 
+}
+
+.clickable{ 
+  position: absolute; 
+  opacity: 0.7;
+  padding: 10px; 
+}
+
+.clickable:hover{ 
+  opacity: 1;
+  cursor: pointer; 
+}
+
+.view-results{ 
+  bottom: 0; 
+  left: 0; 
+
+}
+
+.exit{ 
+  bottom: 0; 
+  right: 0; 
+}
+
+._results{ 
+  list-style: decimal;
+}
+
+._results li{ 
+  margin-left: 10px;
+  padding: 5px; 
+  position: relative; 
+}
+
+.tooltip{
+  color: white; 
+  padding: 8px; 
+  position: absolute; 
+  top: 2.4rem; 
+  left: -30px;
+  border-radius: 8px;
+  background-color: #555555; 
+  z-index: 1;
+  visibility: hidden;
+}
+
+li:hover{ 
+  cursor: pointer; 
+}
+
+li:hover > .tooltip{
+  visibility: visible;
+}
+
+.triangle{
+  border: solid 9px transparent;
+  /*border-bottom-color: blue; */
+  border-bottom-color: #555555;
+  border-top: none; 
+  width: 0; 
+  position: absolute; 
+  top: -9px; 
+  z-index: 2; 
+}
+
+/* 
+
+  <body>
+    <p id="title">Training Quiz</p>
+
+    <ul>
+      <li>This quiz consists of 10 multiple choice questions</li>
+      <li> You will have 15 minutes to complete the quiz</li>
+      <li> You will have 3 attempts </li>
+      <li> Refreshing the page will consume an attempt</li> 
+      <li> Contact a supervisor if there are any issues</li>
+    </ul>
+    <div class="input-wrapper">
+      <input id="user-input" type="text" placeholder="Enter username..." onkeypress=getkey(this)>
+      <i class='fa-solid fa-magnifying-glass' onclick=getclick(this)></i>
+    </div>
+
+*/ 
