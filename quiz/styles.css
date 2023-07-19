@@ -216,22 +216,3 @@ li:hover > .tooltip{
   top: -9px; 
   z-index: 2; 
 }
-
-/* 
-
-  <body>
-    <p id="title">Training Quiz</p>
-
-    <ul>
-      <li>This quiz consists of 10 multiple choice questions</li>
-      <li> You will have 15 minutes to complete the quiz</li>
-      <li> You will have 3 attempts </li>
-      <li> Refreshing the page will consume an attempt</li> 
-      <li> Contact a supervisor if there are any issues</li>
-    </ul>
-    <div class="input-wrapper">
-      <input id="user-input" type="text" placeholder="Enter username..." onkeypress=getkey(this)>
-      <i class='fa-solid fa-magnifying-glass' onclick=getclick(this)></i>
-    </div>
-
-*/ 

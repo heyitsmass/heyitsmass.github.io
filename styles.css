@@ -1,44 +1,80 @@
-html{ 
-  height:100%; 
+body {
+  background: #2b2b2b;
+  color: #f2f2f2;
+  font-family: 'Source Code Pro', 'Rubik', Arial, sans-serif;
+  height: calc(100vh - 2rem);
+  border: solid 1px white; 
+  position: relative; 
 }
 
-h1 { 
-  padding-top: 20%; 
-  text-align: center;
-  font-weight: lighter;
-}
-
-body { 
-  background-color: rgb(226,226,237); 
-  background:
-    linear-gradient(45deg, rgba(226, 226, 237, 1) 9%,
-                           rgba(164, 163, 217, 1) 47%, 
-                           rgba(200, 163, 217, 1) 77%);
-  background-repeat:no-repeat;
-  background-attachment: fixed;
-  font-family: 'Fira Code' !important; 
-}
-
-.cinfo{ 
-  text-align: center; 
-}
-
-.socials{ 
-  display: flex; 
-  align-items: center; 
+.container {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-.socials span{ 
-  font-style: italic; 
-  padding: 10px; 
+#countdown {
+  margin-top: 30px;
+  font-size: 2rem;
 }
 
-.socials span:hover{ 
-  font-size: 125%; 
-  transition-duration: 0.25s; 
+#countdown ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex; 
 }
 
-.socials img{ 
-  height: 23px; 
+#countdown ul li {
+  width: 6rem;
+  display: flex; 
+  flex-direction: column;
+  text-align: center;
+}
+
+li span, #countdown ul li label {
+  position: relative;
+  background-color: #3b3b3b;
+  border-radius: 4px;
+}
+
+li span::before, label::before {
+  content: '';
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  top: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 3px black;
+  z-index: -1; 
+}
+
+#countdown ul li label { 
+  width: 80%;
+  padding: .1rem;
+  padding-top: 0; 
+  font-size: .8rem; 
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+div .fa-cog {
+  font-size: 200px; 
+  color: #f2f2f2; 
+  animation: spin 6s linear infinite;
+  margin-bottom: 1rem;
+}
+
+a { 
+  margin-top: 1.2rem;
 }
